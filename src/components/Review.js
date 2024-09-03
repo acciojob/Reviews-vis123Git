@@ -5,7 +5,7 @@ function Review({ review, nextReview, prevReview ,randomReview}) {
   return (
     <article className="review">
       <button className="random-btn" onClick={randomReview}>
-        Surprise me
+        surprise me
       </button>
       <button className="prev-btn" onClick={prevReview}>
         Previous
