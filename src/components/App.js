@@ -26,11 +26,9 @@ function App() {
     <main>
       <section className="container">
         <h1 id="review-heading">Our Reviews</h1>
-        <Review review={data[index]} nextReview={nextReview} prevReview={prevReview} />
+        <Review review={data[index]} nextReview={nextReview} prevReview={prevReview} randomReview={randomReview}/>
         <div className="button-container">
-          <button className="random-btn" onClick={randomReview}>
-            Surprise me
-          </button>
+  
         </div>
       </section>
     </main>
