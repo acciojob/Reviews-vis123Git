@@ -26,11 +26,11 @@ function App() {
     <main>
       <section className="container">
         <h1 id="review-heading">Our Reviews</h1>
-        <Review review={data[index]} />
+        <Review review={data[index]} nextReview={nextReview} prevReview={prevReview} />
         <div className="button-container">
-          <button className="prev-btn" onClick={prevReview}>Previous</button>
-          <button className="next-btn" onClick={nextReview}>Next</button>
-          <button className="random-btn" onClick={randomReview}>Surprise me</button>
+          <button className="random-btn" onClick={randomReview}>
+            Surprise me
+          </button>
         </div>
       </section>
     </main>
