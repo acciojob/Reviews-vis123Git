@@ -1,15 +1,14 @@
 import React from "react";
 import "../styles/review.css";
+
 function Review({ review }) {
   return (
-    <div className="review">
-      <p className="author" id={`author-${review.id}`}>
-        {review.name}
-      </p>
+    <article className="review">
+      <img src={review.image} alt={review.name} className="person-img" />
+      <h4 id={`author-${review.id}`} className="author">{review.name}</h4>
       <p className="job">{review.job}</p>
       <p className="info">{review.text}</p>
-      <img className="person-img" src={review.image} />
-    </div>
+    </article>
   );
 }
 

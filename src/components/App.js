@@ -2,22 +2,38 @@ import React, { useState } from "react";
 import Review from "./Review";
 import data from "../data.js";
 import "../styles/App.css";
+
 function App() {
-  const [review, setReview] = useState(data[0]);
-  const nextHandleReview = ()=>{
+  const [index, setIndex] = useState(0);
 
-        console.log("review===",review)
-}
+  const nextReview = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % data.length);
+  };
+
+  const prevReview = () => {
+    setIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
+  };
+
+  const randomReview = () => {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * data.length);
+    } while (newIndex === index);
+    setIndex(newIndex);
+  };
+
   return (
-    <div className="container">
-      <h1 id="review-heading">Our Reviews</h1>
-      <button className="random-btn">surprise me</button>
-      <button className='prev-btn'>Previous</button>
-
-      <Review key={review.id} review={review} />;
-      <button className='next-btn' onClick={nextHandleReview(review)}>Next</button>
-
-    </div>
+    <main>
+      <section className="container">
+        <h1 id="review-heading">Our Reviews</h1>
+        <Review review={data[index]} />
+        <div className="button-container">
+          <button className="prev-btn" onClick={prevReview}>Previous</button>
+          <button className="next-btn" onClick={nextReview}>Next</button>
+          <button className="random-btn" onClick={randomReview}>Surprise me</button>
+        </div>
+      </section>
+    </main>
   );
 }
 
