@@ -1,0 +1,13 @@
+.review{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 2px solid red;
+
+}
+
+.person-img{
+        width: 100px;
+}

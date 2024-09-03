@@ -10,3 +10,15 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    border: 2px solid green;
+
+}
